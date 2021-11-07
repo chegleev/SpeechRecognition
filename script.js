@@ -1,15 +1,13 @@
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-var words = document.querySelector(".words");
+var words = document.getElementById("words");
 var start = document.getElementById("start");
 var svet = document.getElementById("svet");
 
 var rec = new SpeechRecognition();
 rec.interimResults = true;
 
-var p = document.createElement("p");
-p.innerHTML = "...";
-words.appendChild(p);
+words.innerHTML = "...";
 
 start.addEventListener("click", function() {
     rec.start();
@@ -29,7 +27,7 @@ rec.addEventListener("result", function(e) {
         svet.style.background = "#000000";
     }
     
-    p.innerHTML = text;
+    words.innerHTML = text;
 });
 
 rec.addEventListener("end", function(e) {
