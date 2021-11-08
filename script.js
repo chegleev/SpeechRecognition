@@ -30,6 +30,6 @@ rec.addEventListener("result", function(e) {
     words.innerHTML = text;
 });
 
-rec.addEventListener("end", function(e) {
+rec.addEventListener("end", function() {
     rec.start();
 });
